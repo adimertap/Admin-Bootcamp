@@ -15,6 +15,8 @@ use App\Http\Controllers\User\Community\LowonganController as Lowongan;
 use App\Http\Controllers\Admin\MasterDiskonController as Diskon;
 use App\Http\Controllers\User\AllPortofolioController as Portofolio;
 use \App\Http\Controllers\Perusahaan\PelamarController as Pelamar;
+use Illuminate\Support\Facades\Auth;
+
 /* 
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,7 @@ use \App\Http\Controllers\Perusahaan\PelamarController as Pelamar;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return view('welcome');
