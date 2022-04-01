@@ -29,9 +29,7 @@ use Illuminate\Support\Facades\Auth;
 */
 Auth::routes();
 
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('welcome');
+
 
 // Sociallite Routes
 // Route::get('sign-in-google', [UserController::class, 'google'])->name('user.login.google');
@@ -40,6 +38,9 @@ Auth::routes();
 
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('welcome');
     // midtrans route
 Route::get('payment/success' , [Checkout::class, 'midtransCallback']);
 Route::get('payment/unfinish' , [Checkout::class, 'midtransUnfinished']);
