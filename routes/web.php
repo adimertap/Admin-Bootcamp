@@ -31,9 +31,7 @@ Auth::routes();
 
 
 
-// Sociallite Routes
-// Route::get('sign-in-google', [UserController::class, 'google'])->name('user.login.google');
-// Route::get('auth/google/callback', [UserController::class, 'handleProviderCallback'])->name('user.google.callback');
+
 
 
 
@@ -42,6 +40,9 @@ Route::group(['middleware' => 'auth'], function () {
         return view('welcome');
     })->name('welcome');
     // midtrans route
+    // Sociallite Routes
+Route::get('sign-in-google', [UserController::class, 'google'])->name('user.login.google');
+Route::get('auth/google/callback', [UserController::class, 'handleProviderCallback'])->name('user.google.callback');
 Route::get('payment/success' , [Checkout::class, 'midtransCallback']);
 Route::get('payment/unfinish' , [Checkout::class, 'midtransUnfinished']);
 Route::post('payment/error' , [Checkout::class, 'midtransError']);
