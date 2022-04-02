@@ -81,7 +81,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center">
-                                        <div class="small"><a href="{{ route('welcome') }}">Back to Welcome Page!</a></div>
+                                        <div class="small"><a href="{{ url('https://setia-bootcamp.com/') }}">Back to Welcome Page!</a></div>
                                     </div>
                                 </div>
                             </div>
